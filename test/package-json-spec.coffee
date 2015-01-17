@@ -1,25 +1,16 @@
-path    = require 'path'
-os      = require 'os'
-assert  = require('yeoman-generator').assert
-helpers = require('yeoman-generator').test
-
 describe 'package.json', ->
   describe 'pattern: "tree", github: "octoblu"', ->
     beforeEach (done) ->
       runGenerator {}, patternName: 'tree', githubName: 'octoblu', done
 
-    it 'should name the package the "tree"', ->
-      assert.fileContent 'package.json', /"name": "tree"/
+    it 'should create a package.json', ->
+      expect('package.json').to.be.a.file().with.json
 
     it 'should name the package the "tree"', ->
-      assert.fileContent 'package.json', /"repository": "octoblu\/tree"/
+      nameRegexp = /"name": "tree"/
+      expect('package.json').to.have.content.that.match nameRegexp
 
-runGenerator = (options={}, prompt={}, cb=->) ->
-  options['skip-install'] = options['skip-install'] ? true
-
-  helpers.run   path.join(__dirname, '../app')
-         .inDir path.join(os.tmpdir(), './temp-test')
-         .withOptions options
-         .withPrompt prompt
-         .on 'end', cb
+    it 'should name the package the "tree"', ->
+      repositoryRegexp = /"repository": "octoblu\/tree"/
+      expect('package.json').to.have.content.that.match repositoryRegexp
 
