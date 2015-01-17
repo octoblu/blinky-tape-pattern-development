@@ -1,0 +1,23 @@
+{
+  "name": "blinky-tape-pattern-development",
+  "version": "1.0.0",
+  "description": "Playground for developing blinky-tape patterns over meshblu",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octoblu/blinky-tape-pattern-development.git"
+  },
+  "keywords": [
+    "meshblu",
+    "blinky-tape"
+  ],
+  "author": "Octoblu Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/blinky-tape-pattern-development/issues"
+  },
+  "homepage": "https://github.com/octoblu/blinky-tape-pattern-development"
+}
