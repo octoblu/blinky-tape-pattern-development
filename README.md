@@ -1,2 +1,2 @@
-# blinky-tape-pattern-development
-Playground for developing blinky-tape patterns over meshblu
+# generator-blinky-tape-pattern
+Yeoman generator for developing blinky-tape patterns over meshblu 

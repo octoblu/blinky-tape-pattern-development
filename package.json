@@ -1,7 +1,7 @@
 {
   "name": "blinky-tape-pattern-development",
   "version": "1.0.0",
-  "description": "Playground for developing blinky-tape patterns over meshblu",
+  "description": "Yeoman generator for developing blinky-tape patterns over meshblu",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
