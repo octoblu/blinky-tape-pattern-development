@@ -13,18 +13,23 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the doozie' + chalk.red('BlinkyTapePatternDevelopment') + ' generator!'
+      'Welcome to the ' + chalk.red('Blinky Tape Pattern') + ' generator!'
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'patternName',
+      message: 'What is the name of your new Pattern?',
+      default : this.appname
+    }, {
+      type: 'input',
+      name: 'githubName',
+      message: 'What github user/organization will this be under?'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.patternName = props.patternName;
+      this.githubName  = props.githubName;
 
       done();
     }.bind(this));
@@ -32,25 +37,7 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-    },
-
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
+      this.template('_package.json', 'package.json');
     }
   },
 

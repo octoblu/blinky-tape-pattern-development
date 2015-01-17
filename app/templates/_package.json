@@ -1,5 +1,24 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%= _.slugify(patternName) %>",
+  "version": "1.0.0",
+  "repository": "<%= githubName %>/<%= _.slugify(patternName) %>",
+  "scripts": {
+    "start": "coffee command.coffee",
+    "test":  "mocha"
+  },
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "meshblu": "^1.8.3",
+    "debug": "^2.1.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.6.0"
+  },
+  "keywords": [
+    "meshblu-connector",
+    "gateblu"
+  ]
 }
