@@ -25,17 +25,14 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chai": "^1.10.0",
     "chalk": "^0.5.0",
-    "sinon": "^1.12.2",
-    "sinon-chai": "^2.6.0",
+    "coffee-script": "^1.8.0",
     "yeoman-generator": "^0.18.0",
     "yosay": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
     "chai-fs": "^0.1.0",
-    "coffee-script": "^1.8.0",
     "mocha": "^2.1.0",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0"
