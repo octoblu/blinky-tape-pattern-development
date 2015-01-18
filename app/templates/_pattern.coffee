@@ -9,7 +9,7 @@ class Pattern
     baseFrameSize = _.size @baseFrame
 
     _.times @ledCount, (i) =>
-      _.times @baseFrame, (j) =>
+      _.times baseFrameSize, (j) =>
         @baseFrame[(i + j) % baseFrameSize]
 
 module.exports = Pattern
