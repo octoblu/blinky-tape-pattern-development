@@ -1,6 +1,8 @@
 yeoman = require 'yeoman-generator'
 chalk  = require 'chalk'
 yosay  = require 'yosay'
+_      = require 'lodash'
+_.str  = require 'underscore.string'
 
 module.exports = yeoman.generators.Base.extend
   initializing: ->
@@ -15,7 +17,7 @@ module.exports = yeoman.generators.Base.extend
       type: 'input'
       name: 'patternName'
       message: 'What is the name of your new Pattern?'
-      default : @appname
+      default : _.str.slugify(@appname)
     }, {
       type: 'input',
       name: 'githubName',
@@ -31,6 +33,7 @@ module.exports = yeoman.generators.Base.extend
   writing:
     app: ->
       @template '_package.json', 'package.json'
+      @template '_gitignore', '.gitignore'
       @template '_command.coffee', 'command.coffee'
       @template '_pattern.coffee', 'pattern.coffee'
 

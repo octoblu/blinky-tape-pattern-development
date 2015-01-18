@@ -1,3 +1,5 @@
+_ = require 'lodash'
+
 class Pattern
   constructor: ->
     @ledCount = 60

@@ -1,6 +1,7 @@
-Pattern = require './pattern'
-meshblu = require 'meshblu'
 debug   = require('debug')('pattern')
+_       = require 'lodash'
+meshblu = require 'meshblu'
+Pattern = require './pattern'
 
 class Command
   loadConfig: =>
@@ -15,7 +16,7 @@ class Command
     @animation = (new Pattern()).generate()
     debug 'animation', JSON.stringify(@animation)
 
-    @conn = meshblu.createConnection _.pick(config, ['uuid', 'token', 'server', 'port'])
+    @conn = meshblu.createConnection _.pick(@config, ['uuid', 'token', 'server', 'port'])
     @conn.on 'ready', =>
       debug 'ready'
       @conn.message {
