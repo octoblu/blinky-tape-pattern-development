@@ -1,6 +1,6 @@
 {
   "name": "generator-blinky-tape-pattern",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Yeoman generator for developing blinky-tape patterns over meshblu",
   "license": "MIT",
   "main": "app/index.js",

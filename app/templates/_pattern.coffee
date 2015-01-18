@@ -8,8 +8,8 @@ class Pattern
   generate: =>
     baseFrameSize = _.size @baseFrame
 
-    _.times @ledCount, (i) =>
-      _.times baseFrameSize, (j) =>
+    _.times baseFrameSize, (i) =>
+      _.times @ledCount, (j) =>
         @baseFrame[(i + j) % baseFrameSize]
 
 module.exports = Pattern
